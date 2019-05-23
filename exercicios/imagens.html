@@ -70,7 +70,9 @@
     function exibirSlide(slides, slide){
         slide.style.display = 'block'
 
+        //InnerWidth = tamanho interno da tela
         const inicio = innerWidth
+        //InnerWidth = tamanho ocupado pelo elemneto naT
         const fim = -slide.clientWidth
 
         slide.style.left = `${inicio}px`

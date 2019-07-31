@@ -1,11 +1,67 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <title>Position</title>
     <style>
-        /* ... */
+        div{
+            font-size: 60px;
+            padding: 30px;
+            border: solid 5px #222;
+        }
+
+        .static{
+            top: 100px;
+            left: 100px;
+            background-color: steelblue;
+        }
+
+        .fixed{
+            position: fixed;
+            bottom: 30px;
+            right: 0;
+            background-color: tomato;
+        }
+
+        .relative1{
+            position: relative;
+            left: 50px;
+            top: 5px;
+            background-color: seagreen;
+        }
+
+        .absolute1{
+            position: absolute;
+            left: 350px;
+            top: 120px;
+            background-color: violet;
+        }
+
+        .relative2{
+            position: relative;
+            left: 250px;
+            top: 2000px;
+            width: 200px;
+            height: 200px;
+            background-color: slategray;
+        }
+
+        .absolute2{
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+        }
+
+        .sticky{
+            position: -webkit-stick; /*Safari*/
+            position: sticky;
+            background-color: #777;
+            top: 0;
+        }
     </style>
 </head>
 
@@ -17,6 +73,8 @@
 
     <div class="relative2">
         <div class="absolute2"></div>
+        Esse comportamento ocorre pq a div 
+        absoluta esta dentro de uma relativa
     </div>
 
     <div class="sticky">Sticky</div>

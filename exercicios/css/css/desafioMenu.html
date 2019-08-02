@@ -7,7 +7,100 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* ... */
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            background-color: #D8D8D8;
+            font-family: 'OSwald'
+        }
+        
+        a{
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .logo{
+            display: inline-block;
+            height: 50px;
+            padding: 10px;
+        }
+
+        .logo img{
+            height: 100%;
+        }
+
+        .cabecalho{
+            background-color: #222;
+            box-shadow: 0 3px #00BFFF, -1em 0 2.4em;
+            height: 50px;
+        }
+
+        .menu{
+            display: inline-block;
+            vertical-align: top;
+            height: 50px;
+            padding: 10px;
+        }
+
+        .menu li{
+            display: inline-block;
+        }
+
+        .menu a{
+            padding: 15px
+        }
+
+        .menu a:hover, .menu a.selected{
+            background-color: #FE2E2E;
+            color: #000;
+        }
+        
+        .menu-toggle{
+            display: none;
+            float:right;
+            margin: 10px;
+            padding: 5px 13px;
+            border: 1px solid #D8D8D7;
+            background-color: #424242;
+            color: #D8D8D7;
+            border-radius: 2px;
+        }
+
+        .autenticacao{
+            display: inline-block;
+            float: right;
+            margin: 15px;
+        }
+
+        .botao{
+            padding: 5px 20px;
+            background-color: #FE2E2E;
+            border-radius: 15px;
+        }
+        
+        .botao:hover{
+            color: #000;
+        }
+
+        @media(max-width: 700px){
+            .autenticacao{
+                display: none;
+            }
+        }
+
+        @media(max-width: 560px){
+            .menu{
+                display: none;
+            }
+
+            .menu-toggle{
+                display: inline-block;
+            }
+        }
     </style>
 </head>
 
@@ -44,7 +137,15 @@
     </header>
 
     <script>
-        // ...
+        window.onhashchange = function(event){
+            const oldURL = event.oldURL.split('#')[1]
+            const newURL = event.newURL.split('#')[1]
+
+            const oldMenu = document.querySelector(`.menu a[href='#${oldURL}']`)
+            const newMenu = document.querySelector(`.menu a[href='#${newURL}']`)
+            oldMenu && oldMenu.classList.remove('selected')
+            newMenu && newMenu.classList.add('selected')
+        }
     </script>
 </body>
 

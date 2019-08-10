@@ -6,7 +6,52 @@
     <title>Flexbox #02</title>
     <link rel="stylesheet" href="css/tag.css">
     <style>
-        /* ... */
+        .flex-container{
+            display: flex;
+            height: 300px;
+            width: 600px;
+        }
+
+        .flex-container div:nth-child(3){
+            background-color: indianred;
+            order: 1;
+            order: 0;
+            order: -1;
+            align-self: center;
+            align-self: flex-end;
+            align-self: flex-start;
+            align-self: stretch;
+        }
+
+        .flex-container div{
+            width: 100px;
+            flex-grow: 0;
+            flex-grow: 1;
+        }
+
+        .flex-container div:nth-child(1){
+            flex-grow: 2;
+        }
+
+        .flex-container{
+            width: 300px;
+            flex-shrink: 1;
+        }
+
+        .flex-container div:nth-child(1){
+            flex-shrink: 5;
+        }
+
+        /*
+            order= muda a orde de exibição dos itens do flex-container
+
+            flex-grow= com base no numero recebido como parâmetro ele 
+            pega o tamando do flex-container, divide pelo numero de 
+            flex-itens e multiplica pelo valor recebido. Esse 
+            resultado é somado no tamanho do flex-item
+
+            flex-shrink= É o inverso do flex-grow
+        */
     </style>
 </head>
 

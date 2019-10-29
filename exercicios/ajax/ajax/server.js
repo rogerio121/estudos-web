@@ -41,5 +41,17 @@ app.post('/formulario', (req, res) =>{
     })
 })
 
+//req.body
+//req.query
+//req.params    
+
+app.get('/parOuImpar', (req, res) =>{
+    const valorEhPar = parseInt(req.query.numero) % 2 === 0
+        
+    res.send({
+        parOuImpar: valorEhPar ? 'Par' : 'Impar'
+    })
+})
+
 app.get('/test', (req, res) => res.send('Ok'))
 app.listen(8081, () => console.log('Executando...'))
